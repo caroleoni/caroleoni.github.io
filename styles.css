@@ -1,0 +1,742 @@
+:root {
+    --color1: rgb(0,133,95);
+    
+    --fondo: #f2f2f2;
+    --titulos: 33px;
+    --margenes: 60px;
+    --espacios: 10px;
+    --espacios-contenidos: 45px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'open sans';
+    background: var(--fondo);
+}
+
+img {
+    vertical-align: top;
+}
+
+/* Preloader */
+.hidden {
+   overflow: hidden;
+}
+
+.centrado {
+   position: fixed;
+   width: 100vw;
+   height: 100vh;
+   background: #000;
+   z-index: 100;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #cef;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+  }
+
+  /* Header */
+  header {
+    width: 100%; /*es el largo de la barra de navegacion*/
+    height: 700px;
+    background-image: url(/images/navbar-2.jpeg);
+    /* background: linear-gradient(to bottom,
+    rgba(2, 160, 86, .6), 
+    rgba(29,241,171, .6),
+    rgba(3,189,87, .49)
+    ), url(/images/navbar-2.jpeg); */
+    /* background-image: linear-gradient(to top, #98c668 0, #81c066 16.67%, #63b660 33.33%, #36a858 50%, #009952 66.67%, #008f52 83.33%, #008857 100%), url(/images/navbar-2.jpeg);
+    background-attachment: fixed; */
+    background-position: center;
+    background-size: cover; /*para que se adapte a toda la pantalla*/
+  }
+
+  nav {
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5); /* sombra */
+    
+  }
+
+  
+  .nav1 {
+    height: 80px;
+    color: rgb(76, 194, 72);
+    /* color: rgb(101, 173, 99); */
+    /* color: rgba(2, 39, 2, 0.678); */
+    background-color: rgb(0,133,95);
+   
+  }
+  /* El nav2 vamos a crearlo con java script, para darle la clase */
+  .nav2 {
+    background: #f2f2f2;
+    height: 100px;
+    /* color: rgba(2, 39, 2, 0.678); */
+    /* color: rgb(99, 143, 173); */
+    color: rgb(101, 173, 99);
+    z-index: 2;
+  }
+
+  /* separa el logo y las palabras */
+  .contenedor-nav {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    height: inherit; /* para que se guie de su padre nav1 o nav2*/
+    overflow: hidden;
+    /* z-index: 2; */
+    
+  }
+
+    nav .enlaces a {
+        display: inline-block;
+        padding: 5px 0;
+        margin-right: 17px;
+        font-size: 18px;
+        font-weight: 300;
+        text-decoration: none;
+        border-bottom: 3px solid transparent;
+        color: inherit; /* esto quiere decir que herede el color de su padre, puede ser nav1, nav2 */
+       
+ }
+
+ nav .enlaces a:hover {
+    border-bottom: 3px solid #1498a4;
+    transition: 0.6s;
+ }
+
+ .logo, .logo img {
+    height: 80px;
+    
+ }
+
+ .icono {
+    display: none; /*con el none desaparece la homburguesa*/
+    font-size: 24px;
+    padding: 23.5px 20px; /*23.5px arriba y abajo, 20px a los lados*/
+ }
+
+ /* Main */
+ .contenedor {
+    margin: auto; /* para que centre todo el contenido */
+    padding: 60px 0; /*margenes arriba y abajo, 0 hacia los lados-> es un espaciado entre cada section*/
+    width: 90%;
+    text-align: center;
+    overflow: hidden;
+ }
+
+ .contenedor h3 {
+    font-size: 33px;
+    color: rgb(0,133,95);
+    margin-bottom: 10px;
+    /* margin-bottom: var(--espacios); */
+ }
+ .contenedor h4 {
+    font-size: 22px;
+    color: rgb(0,133,95);
+    margin-bottom: 10px;
+    /* margin-bottom: var(--espacios); */
+ }
+
+ .contenedor p {
+    font-size: var(--subtitulos);
+    font-weight: 300;
+    color: rgb(0,133,95);
+    /* color: rgb(23,180,83); */
+ }
+
+ /* agrega una caja, en este caso, despues de este elemento, es la linea despues de cada texto*/
+ /* .after::after {
+    content: '';
+    display: block; 
+    margin: auto;
+    margin-top: var(--espacios);
+    width: 100px;
+    height: 2px;
+    background: rgb(23,180,83);
+    padding-bottom: var(--espacios-contenidos);
+ } */
+
+ /* CARRUSEL CUSTOMERS*/
+
+ /* .swiper {
+   width: 100%;
+   height: 100%;
+ }
+
+ .swiper-slide {
+   text-align: center;
+   font-size: 18px;
+   background: #fff;
+
+   /* Center slide text vertically 
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   -webkit-align-items: center;
+   align-items: center;
+ }
+
+ .swiper-slide img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ } */
+
+ .contenedor__galeria {
+   display: flex;
+   width: 100%;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   max-width: 1000px;
+   margin: auto;
+   box-shadow: 0 0 20px 0 rgba(0,133,95, .3);
+   margin-top: 20px;
+ }
+
+ .galeria__img {
+   width: 150px;
+   height: 100px;
+   border-radius: 50%;
+   margin-bottom: 10px;
+   object-fit: contain;
+   filter: brightness(70%);
+   animation: escalar 1.5s infinite alternate;
+ }
+ @keyframes escalar {
+   to {
+      transform: scale(1);
+   }
+   from {
+      transform: scale(1.05);
+   }
+ }
+
+ .galeria__img:hover {
+   filter: brightness(100%);
+ }
+ 
+
+ /* Our Partners (socio)*/
+
+ .socios {
+   background-color: #e5e5f7;
+ }
+
+ .socios__container {
+   display: grid;
+   grid-template-columns: 50px 1fr 50px;
+   gap: 1em;
+   align-items: center;
+ }
+
+ .socio__body {
+   display: grid;
+   grid-template-columns: 1fr max-content;
+   justify-content: space-between;
+   gap: 2em;
+   grid-column: 2 / 3;
+   grid-row: 1 / 2;
+   opacity: 0;
+   pointer-events: none;
+ }
+
+ .socio__body--show {
+   pointer-events: unset;
+   opacity: 1;
+   transition: opacity 1.5s ease-in-out;
+ }
+
+ .socio__img {
+   width: 250px;
+   height: 250px;
+   border-radius: 50%;
+   /* object-fit: cover;
+   object-position: 50% 30%; */
+ }
+
+ .socio__text {
+   max-width: 700PX;
+   margin-top: 50px;
+ }
+
+ .socio__arrow {
+   width: 90%;
+   cursor: pointer;
+ }
+
+ a {
+   text-decoration: none; 
+ }
+ .azul {
+   color: rgba(0, 0, 255, 0.74);
+ }
+ .naranja {
+   color: rgba(228, 124, 40, 0.959);
+ }
+ .negro {
+  color: black;
+ }
+ .amarillo {
+   color: rgb(175, 175, 14);
+ }
+ .rojo {
+   color: red;
+ }
+
+/* .card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /*por si se llega a juntar todo, que vayan bajando
+ }
+
+ .content-card {
+    width: 31%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    height: 400px;
+ }
+
+ .logo-socio {
+    height: 50%;
+ }
+
+ .content-card img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+ }
+
+ .texto-compania {
+    height: 20%;
+    width: 100%;
+    padding: 5px;
+    /* padding: var(--espacios) 0; 
+ }*/
+
+ .botones-work {
+    overflow: hidden;
+ }
+
+ .botones-work li {
+    display: inline-block;
+    text-align: center;
+    /* margin-left: var(--espacios); */
+    margin-left: 10px;
+    /* margin-bottom: var(--espacios-contenidos); */
+    margin-bottom: 45px;
+    padding: 6px 12px;
+    border: 1px solid rgb(23,180,83);
+    list-style: none;
+    color: rgb(0,133,95);
+ }
+
+ .botones-work li:hover {
+    background: rgb(0,133,95);
+    /* background: var(--color3); */
+    color: #fff;
+    cursor: pointer;
+ }
+
+ .botones-work .active {
+    background: rgb(0,133,95);
+    color: #fff;
+ }
+
+ /* PORFOLIO */
+ .container__card {
+   max-width: 1200px;
+   margin: auto;
+   margin-top: 20px;
+   perspective: 1000px; /*es como la manera en la que nosotros vemos las cosas*/
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap; /* para que sea responsive*/
+   
+ }
+
+ .card__father {
+   margin: 20px;
+   perspective: 1000px; 
+   
+   
+ }
+
+ /* Aqui hacemos el giro */
+ .card__father:hover .card {
+   transform: rotateY(180deg);
+ }
+
+ .card {
+   width: 300px;
+   height: 350px;
+   position: relative;
+   transform-style: preserve-3d;
+   transition: all 600ms;
+ }
+
+ .card__front {
+   background-size: cover;
+   background-position: center;
+ }
+
+ .card__front,
+ .card__back {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   backface-visibility: hidden; 
+   transform-style: preserve-3d; /*preservar el giro en 3d*/
+   border-radius: 20px;
+ }
+
+ .card__back {
+   transform: rotateY(180deg);
+   background: white;
+ }
+
+ .body__card__front {
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   padding: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   text-shadow: 1px 1px 2px rgb(0, 255, 34), 0 0 1em blue, 0 0 0.2em blue;
+   /* text-shadow: rgb(2, 173, 125) 1px 0 10px; */
+   font-size: 20px;
+   transform: translateZ(60px); /*con esto se ve flotando la palabra service en la card */
+ }
+
+ /* Es el efecto para que la palabra services de la card front se vea flotando, que no toque la card */
+ .bg {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.4);
+   border-radius: 20px;
+ }
+
+ .body__card__back {
+   padding: 40px;
+   text-align: center;
+   transform: translateZ(60px);
+ }
+
+ .body__card__back p {
+   margin-top: 20px;
+   font-size: 16px;
+
+ }
+
+ .body__card__back .operational {
+   margin-top: 100px;
+   
+ }
+
+
+
+ /* .galeria-work {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+ } */
+
+ /*caja*/
+ /* .galeria-work .cont-work {
+    width: 31%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+    height: 300px;
+    overflow: hidden;
+    /* margin-bottom: var(--espacios-contenidos); 
+    margin-bottom: 45px;
+ }
+
+ .img-work {
+    height: 90%;
+    width: 100%;
+ }
+
+ .img-work img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+ }
+
+ .texto-work {
+    height: 10%;
+ }
+
+ .texto-work h4 {
+    line-height: 30px;
+    font-weight: 300;
+ } */
+
+ /* Footer */
+ footer {
+    width: 100%;
+    padding: 20px 0px;
+    background: rgba(3, 56, 3, 0.089);
+ }
+ 
+ .footer {
+   
+    max-width: 1200px;
+    margin: auto;
+ }
+
+ .iconos {
+    /* display: flex;
+    margin: auto; */
+        
+    justify-content: space-around;
+    width: 100%;
+ }
+
+ .fa-brands {
+    font-size: 40px;
+    color: rgb(0,133,95);
+    /* margin-bottom: var(--espacios); */
+    margin-bottom: 10px;
+    display: inline-block;
+ }
+
+ h2 {
+    color: rgb(0,133,95);
+ }
+
+ /* @media*/
+ @media screen and (max-width: 700px) {
+   .nav1 {
+      color: #fff;
+   }
+
+   .nav2 {
+      color: #fff;
+   }
+   .icono {
+      display: block;
+      cursor: pointer;
+   }
+   .enlaces {
+      position: fixed; /*rompe lo que tengo flexbox, para que ya no se alinie*/
+      top: 80px;
+      background: #2c3e50;
+      left: 0;
+      height: 100%;
+      transition: 1s;
+      width: 0; /* con el width 0 y el overFlow hidden se esconde la barra */
+      overflow: hidden;
+   }
+
+   .enlaces a {
+      display: block;
+      width: 100%;
+      height: 50px;
+      padding: 20px;
+      text-align: center;
+      background: #34495e;
+      color: #fff;
+   }
+
+   .content-card {
+      width: 48%;
+      margin-bottom: var(--margenes);
+     
+   }
+   :root {
+      --margenes: 30px;
+   }
+
+   .socios__container {
+      grid-template-columns: 30px 1fr 30px;
+   }
+   .socio__body {
+      grid-template-columns: 1fr;
+      grid-template-rows: max-content max-content;
+      gap: 3em;
+      justify-content: center;
+   }
+   .socio__img {
+      width: 200px;
+      height: 200px;
+   }
+ }
+
+ @media screen and (max-width: 500px) {
+      :root {
+         --espacios-contenidos: 25px
+      }
+      .content-card {
+         width: 90%;
+      }
+      .cont-work.service {
+         width: 85%;
+      }
+      .cont-work.solution {
+         width: 85%;
+      }
+      .iconos {
+         margin: auto;
+      }
+      
+      .socios__container {
+      grid-template-columns: 28px 1fr 28px;
+   }
+   }
+
+   /* CONTACTO FORMULARIO */
+/* .contact_body {
+   font-family: 'open sans';
+   min-height: 600px;
+   padding: 80px 0;
+   background-image: linear-gradient(to top, #43e97b 0%, #38f9d7 100%);
+   background-color: #38f9d7;
+
+   display: flex;
+}
+
+.contact {
+   margin: auto;
+   width: 90%;
+   background-image: linear-gradient(rgba(255, 255, 255, 0.562), rgba(255, 255, 255, 0.26));
+} */
+
+   .contact__wrapper {
+      box-shadow: 0 0 20px 0 rgba(0,133,95, .3);
+   }
+
+   .contact__wrapper > * {
+      padding: 1em;
+   }
+
+   .contact__form form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+   }
+
+   .contact__form form .block {
+      grid-column: 1 / 3;
+   }
+
+   .contact__form form p {
+      margin: 0;
+      padding: 1em;
+   }
+
+   .contact__form form button,
+   .contact__form form input,
+   .contact__form form textarea {
+      width: 100%;
+      padding: .7em;
+      border: none;
+      background: none;
+      outline: 0;
+      border-bottom: 1px solid #00855f;
+   }
+
+   .contact__form form button {
+      background: #00855f;
+      border: 0;
+      color: #fff;
+      text-transform: uppercase;
+      padding: 1em;
+   }
+
+   .contact__form form button:hover,
+   .contact__form form button:focus {
+      background: rgba(0, 132, 255, 0.781);
+      color: rgb(0, 4, 255);
+      transition: background-color 1s ease-out;
+      outline: 0;
+      cursor: pointer;
+   }
+
+   .parrafo__cv {
+      margin-top: 20px;
+   }
+   
+
+   /* PANTALLA GRANDE */
+
+   @media (min-width: 700px) {
+      .contact__wrapper {
+         display: grid;
+         grid-template-columns: 1fr 2fr;
+      }
+      .contact__wrapper > * {
+         padding: 2em;
+      }
+
+      .contact__img {
+         padding-bottom: 1em;
+         margin-top: 3em;
+      }
+   }
+
+   #mapa {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      margin-top: 80px;
+      margin-bottom: 80px;
+      padding: 20px;
+   }
