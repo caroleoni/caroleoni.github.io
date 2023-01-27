@@ -218,18 +218,24 @@ img {
  .imagen__customer {
    width: 24%;
    margin-bottom: 10px;
-   height: 150px;
+   height: 100px;
    overflow: hidden;
    position: relative;
    cursor: pointer;
    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+   background: #021a333f;
  }
 
- .imagen__customer > a img {
+ .imagen__customer > img {
    width: 90%;
    height: 90%;
    object-fit: contain;
    display: block;
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
  }
 
  .hover__galeria {
@@ -247,7 +253,7 @@ img {
  }
 
  .hover__galeria h4 {
-   width: 60%;
+   width: 80%;
    color: #fff;
  }
 
