@@ -74,11 +74,27 @@ abrir.addEventListener('click', function() {
 });
 
 /* CUSTOMERS */
-var swiper = new Swiper(".mySwiper", {
+let swiper = new Swiper(".mySwiper", {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
   });
+
+/* MULTIDIOMAS */
+let check = document.querySelector(".check");
+check.addEventListener('click', idioma);
+
+function idioma() {
+    // console.log(check.checked);
+    let id = check.checked;
+    if(id == true) {
+        location.href="es/index.html";
+    } else {
+        location.href="../index.html";
+    }
+    
+}
+
 
 
