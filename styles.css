@@ -193,12 +193,13 @@ img {
     
  }
 
-
  .icono {
     display: none; /*con el none desaparece la homburguesa*/
     font-size: 24px;
     padding: 23.5px 20px; /*23.5px arriba y abajo, 20px a los lados*/
  }
+
+ 
 
  /* Main */
  .contenedor {
@@ -228,6 +229,46 @@ img {
     color: rgb(0,133,95);
     /* color: rgb(23,180,83); */
  }
+
+ details {
+   background-color: #e5e5f7;
+   padding: .5rem;
+   border-radius: 6px;
+   margin: .5rem;
+   cursor: pointer;
+ }
+
+ summary {
+   list-style: none;
+   font-size: 22px;
+    color: rgb(0,133,95);
+    margin-bottom: 10px;
+ }
+
+ summary::before  {
+   content: '+';
+   padding-right: 1rem;
+ }
+ details[open] summary::before {
+   content: '-';
+ }
+
+ div p {
+   font-size: var(--subtitulos);
+    font-weight: 300;
+    color: rgb(0, 91, 133);
+    margin: auto; /* para que centre todo el contenido */
+    padding: 6px 0; 
+    width: 90%;
+    overflow: hidden;
+ }
+
+ ul {
+   margin: 10px 10px 10px auto;
+   color: rgb(2, 70, 102);
+   width: 90%;
+ }
+
 
  /* agrega una caja, en este caso, despues de este elemento, es la linea despues de cada texto*/
  /* .after::after {
@@ -679,7 +720,7 @@ img {
       }
       .iconos {
          margin: auto;
-         
+
       }
       
       .socios__container {
